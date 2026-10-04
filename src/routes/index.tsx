@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { GameShowcase } from "@/components/GameShowcase";
-import { HERO_VIDEO, aboutParagraphs, team } from "@/lib/studio-data";
+import { HERO_VIDEO, aboutParagraphs, games, team } from "@/lib/studio-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -19,7 +19,7 @@ function Index() {
   return (
     <>
       <section className="home-hero">
-        <video autoPlay muted loop playsInline preload="metadata" className="hero-video" aria-label="David's Studio game reel">
+        <video autoPlay muted loop playsInline preload="auto" poster={games[1].image} className="hero-video" aria-label="David's Studio game reel">
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>
         <div className="hero-overlay" />
